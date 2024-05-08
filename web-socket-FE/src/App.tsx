@@ -1,11 +1,13 @@
 import "./App.css";
-// import WebSocketComponent from "./components/WebSocketComponent";
-import WebSocketHookComponent from "./components/WebSocketHookComponent";
+import useWebSocket from "./hooks/useWebSocket";
+import CRDTInput from "./components/CRDTInput";
 
 function App() {
+  const { socket } = useWebSocket();
+
   return (
     <>
-      <WebSocketHookComponent />
+      <CRDTInput socket={socket} />
     </>
   );
 }
